@@ -1,0 +1,36 @@
+digraph Arch {
+    node [shape = rect, margin = "0.2,0.1"]
+    //    edge [arrowhead = box, arrowtail = box, dir = both]
+    edge [arrowhead = none]
+    labelloc = top
+
+    label = "Controlling PC and Hardware connections\n\r"
+
+    pc [shape = record, style = filled, label = "{ \nControlling PC\n\r | { <usbA>USB Type A |  <lpt>LPT | <com>COM } }"]
+
+    microham [shape = record, style = filled, fillcolor = lightblue, label = "{ <usbB>USB Type B | \nMicrokeyer II\n\r |  { <com>COM | <smth>??? | <smth2>??? | <smth3> ???} }"];
+
+    ru005 [shape = record, style = filled, fillcolor = lightblue, label = "{<db15> DB15 | \nBand Decoder (RU005a)\n\r | <db9>DB9 }"]
+
+    rotorController [shape = record, style = filled, fillcolor = lightblue, label = "{<input> DB9 input | \nRotor interface\n\r | <output>DB9 }"] //todo check if it's really connected to COM or is it an internal device?
+
+    kenwood [shape = record, style = filled, fillcolor = salmon, label = "{ { <com>COM:\nCAT | <acc2>ACC2:\naudio | <mic>8pin Mic:\nPTT | <smth> smth else? }  | \nKenwood TS-590S\n\r }"];
+
+    antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "{ <db9>DB9 | \n Antenna switch \n\r }"]
+
+    rotor [shape = record, style = filled, fillcolor = salmon, label = "{ <input>DB9 - TODO add interface\ndetails | \n Antenna rotator\ncontroller \n\r }"]
+
+    //////////
+
+    pc: usbA -> microham: usbB
+    pc: lpt -> ru005: db15
+    pc: com -> rotorController:input
+    microham: com -> kenwood: com
+    microham: smth -> kenwood: acc2 //TODO check if there's smth else not just audio
+    microham: smth2 -> kenwood: mic //TODO
+    microham: smth3 -> kenwood: smth //TODO
+    ru005: db9 -> antennaSwitch: db9
+    rotorController:output -> rotor:input
+
+
+}

@@ -1,0 +1,60 @@
+digraph Arch {
+    node [shape = rect]
+    edge [arrowhead = none]
+
+    Internet [shape = egg, style = filled, fillcolor = azure]
+    //TODO add User
+
+    subgraph cluster0 {
+    label = "Remote PC";
+    labeljust = l;
+    node [style = filled, shape = rect]
+
+    anyDeskRemote [label = "AnyDesk (Remote)"]
+    }
+
+    subgraph cluster1 {
+    labeljust = r;
+    label = "Controlling PC "
+    edge [arrowhead = none]
+    node [style = filled, shape = rect]
+
+    anyDeskControl [shape = record,label = "{AnyDesk (Controlling)}",margin = "0.2,0.1"];
+
+    n1mm [label = "N1MM Logger"]
+    microhamDeviceMapper [label = "Microham Device\nMapper"] //TODO rename
+    anyDeskControl -> n1mm
+
+    n1mm -> microhamDeviceMapper
+    n1mmRotor [label = "N1MM Rotor"]
+    rotorCalibrator [label = "Quad rotor\ncalibrator"] //TODO rename
+    anyDeskControl -> n1mmRotor
+    }
+
+    subgraph cluster2 {
+    edge [arrowhead = none]
+    node [style = filled, shape = rect, fillcolor = salmon]
+    label = "Hardware"
+    labeljust = l;
+
+    rotorInterface [label = "Rotor interface", fillcolor = lightblue]
+    rotator [label = "Yaesu G1000"]
+    microham [label = "Microham interface", fillcolor = lightblue]
+    trx [label = "Kenwood TS590S"]
+    ru005 [label = "Band decoder", fillcolor = lightblue]
+    antSwitch [label = "Antenna switch"]
+
+    ru005 -> antSwitch
+    microham -> trx
+    }
+
+    Internet -> anyDeskRemote
+    Internet -> anyDeskControl
+
+    microhamDeviceMapper -> microham
+    n1mm -> ru005
+    n1mmRotor -> rotorInterface //TODO make some horizontal alignments
+    rotorInterface -> rotator
+    rotorCalibrator -> rotorInterface
+
+}
