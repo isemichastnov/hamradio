@@ -40,6 +40,7 @@ So you're in and from now on you're controlling the station. Please do not forge
 3. **ROTATOR**: Never let the antenna cross 0º direction (North). Otherwise the feeding cables might be broken, so please be very careful here.
 If you're say at 330º and want to rotate the antenna to 45º, first toggle rotation to 180º, then continue to 45º.
 The rotator always starts the rotation via the shortest (<180 degrees) path within its full 450 degrees range - but that's more than we want.
+##### Once you're done - please return the antenna to 270º
 4. **TRANSCEIVER CONTROL**: Control transceiver functions using the buttons configured in the N1MM bandmap window.
     - Pay special attention to RIT and XIT indicators below the transceiver frequency. Once they're toggled - they're red.
     - Unfortunately we don't have indicators for most of the functions controlled by these buttons, but we're planning to install a camera in front of the transceiver to see the display.
