@@ -45,3 +45,6 @@ Using the remote desktop approach instead of configuring each piece of software 
 More detailed connections diagram 
 
 ![hardware](gv/hw.png)
+
+## 5. Detailed setup
+See [SETUP.md](SETUP.md)

@@ -1,4 +1,4 @@
-# RK5D remote control configuration (Elecraft)
+# RK5D remote control (Elecraft working place)
 
 ## 1. Starting the station:
 1. Start the hardware: for now it's done by Dima manually (Both (!) Controlling PCs, 12V PS, G1000, RU005a band decoder)
@@ -42,3 +42,6 @@ There was no need for connecting a remote microphone for us, however that's a po
 More detailed connections diagram
 
 ![hardware](gv/hw.png)
+
+## 5. Detailed setup
+See [SETUP.md](SETUP.md)

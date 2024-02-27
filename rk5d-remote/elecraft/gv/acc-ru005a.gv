@@ -1,0 +1,17 @@
+digraph {
+    edge [arrowhead = none]
+
+    acc [shape = record, label = "{K3 ACC pins | { <14>BAND3\n14 | <9>BAND2\n9 | <3>BAND1\n3 | <13>BAND0\n13 | <5>GND\n5 }}"]
+
+    db15 [shape = record, label = "{{ <3>3\nBAND D | <4>4\nBAND C | <5>5\nBAND B | <6>6\nBAND A | <9> 9 | <10> 10 | <15>15\nGND } | RU005a DB15 pins}"]
+
+    acc: 13: s -> db15: 6: n
+    acc: 3: s -> db15: 5: n
+    acc: 9: s -> db15: 4: n
+    acc: 14: s -> db15: 3: n
+
+    acc: 5: s -> db15: 15: n
+
+    db15: 9: s -> db15: 15: e
+    db15: 10: s -> db15: 15: e
+}

@@ -1,0 +1,17 @@
+digraph {
+edge [arrowhead = none]
+
+lpt [shape = record, label = "{LPT pins | { <9>BAND D\n9 | <8>BAND C\n8 | <7>BAND B\n7 | <2>BAND A\n2 | <gnd>GND\n18-25 }}"]
+
+db15 [shape = record, label = "{{ <3>3\nBAND D | <4>4\nBAND C | <5>5\nBAND B | <6>6\nBAND A | <9> 9 | <10> 10 | <15>15\nGND } | RU005a DB15 pins}"]
+
+lpt : 9 : s -> db15 : 3 : n
+lpt : 8 : s -> db15 : 4 : n
+lpt : 7: s -> db15 : 5 : n
+lpt : 2 : s -> db15 : 6 : n
+
+lpt: gnd : s -> db15 : 15
+
+db15 : 9 : s -> db15 : 15 : e
+db15 : 10 : s -> db15 : 15 : e
+}
