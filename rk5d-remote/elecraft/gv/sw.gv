@@ -1,0 +1,63 @@
+digraph Arch {
+    node [style = filled, shape = rect, margin = "0.5,0.1"]
+    edge [arrowhead = none]
+
+    labelloc = top
+    label = <<b>Remote control overview</b>>
+
+    Internet [shape = egg, style = filled, fillcolor = azure]
+
+    subgraph cluster0 {
+    labeljust = c;
+    label = < <B>Remote PC</B> >;
+    anyDeskRemote [label = "AnyDesk (Remote)", fontstyle = bold]
+    //TODO: add sound mapping
+    }
+
+    subgraph cluster1 {
+    labeljust = c;
+    node [style = filled, shape = rect, margin = "0.5,0.1"]
+    edge [arrowhead = none]
+    label = < <b>Controlling PC<br/> (Elecraft)</b> >
+
+    anyDeskControl [shape = record,label = "{AnyDesk (Controlling)}",margin = "0.2,0.1"];
+    software [shape = record, label = "<n1mm> N1MM+\nLogger"]
+//    microhamDeviceMapper [label = "Microham Device\nMapper"]
+
+    anyDeskControl -> software [penwidth = 0]
+    }
+
+    subgraph cluster3 {
+    labeljust = c;
+    node [style = filled, shape = rect, margin = "0.5,0.1"]
+    edge [arrowhead = none]
+    label = < <b>Controlling PC<br/>(Kenwood)</b> >
+
+    kenwoodSoftware [shape = record, label = "{{<n1mm> N1MM+\nLogger} | {<n1mmRotor>N1MM\nRotor}}"]
+    }
+
+    subgraph cluster2 {
+    node [style = filled, shape = rect, margin = "0.5,0.1"]
+    edge [arrowhead = none]
+    labeljust = c
+    label = < <b>Hardware</b> >
+
+    controllingHardware [shape = record, fillcolor = lightblue, label = "<ru005> Band\ndecoder\n(RU-005a) | <rotorInterface> Rotor\ninterface"]
+    radioHardware [shape = record, fillcolor = salmon, label = "<trx> Elecraft K3 | <antSwitch> Antenna\nswitch | <rotor> Yaesu\nG1000"]
+
+    controllingHardware: ru005 -> radioHardware: antSwitch
+    controllingHardware: rotorInterface -> radioHardware: rotor
+    }
+
+    Internet -> anyDeskRemote
+    Internet -> anyDeskControl
+
+
+    software: n1mm -> radioHardware: trx
+    radioHardware:trx -> controllingHardware: ru005
+
+    kenwoodSoftware: n1mmRotor -> controllingHardware: rotorInterface
+
+    software: n1mm -> kenwoodSoftware: n1mm
+
+}

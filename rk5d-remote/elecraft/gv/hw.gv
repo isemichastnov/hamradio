@@ -1,0 +1,29 @@
+digraph Arch {
+    node [shape = rect, margin = "0.2,0.1"]
+    edge [arrowhead = none]
+    labelloc = top
+
+    label = <<b>Controlling PC and Hardware connections: <br/>Elecraft working place</b>>
+
+    pc [shape = record, style = filled, label = "{ \nControlling PC\n\r | { <usbA>USB Type A | <lineIn>3.5mm\nline in |<earph>3.5mm\nheadphones} }"]
+//    headset [shape = record, label = "{ Normal PC Headset\nwith electret mic | <mic> mic | <earph> headphones }"]
+
+    elecraft [shape = record, style = filled, fillcolor = salmon, label = "{ { <com>RS232:\n\nCAT,\nCW (DTR),\nPTT (RTS) | <lineOut>3.5mm\nline out | <lineIn>3.5mm\nline in } | \nElecraft K3\n\r | {<acc> ACC (VGA) } }"];
+
+    ru005 [shape = record, style = filled, fillcolor = lightblue, label = "{<db15> DB15 | \nBand Decoder (RU005a)\n\r | <db9>DB9 }"]
+
+    antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "{ <db9>DB9 | \n Antenna switch \n\r }"]
+
+    ////////// TODO check audio connections
+
+    pc: usbA -> elecraft: com
+    pc: earph -> elecraft: lineIn [arrowhead = normal]
+    elecraft: lineOut -> pc: lineIn [arrowhead = normal]
+    elecraft: acc -> ru005: db15
+
+//    headset: mic -> elecraft: micBack [arrowhead = normal]
+//    headset: earph -> elecraft: earphBack [arrowhead = normal, dir = back]
+
+    ru005: db9 -> antennaSwitch: db9
+
+}
