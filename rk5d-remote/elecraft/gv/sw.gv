@@ -21,7 +21,7 @@ digraph Arch {
     label = < <b>Controlling PC<br/> (Elecraft)</b> >
 
     anyDeskControl [shape = record,label = "{AnyDesk (Controlling)}",margin = "0.2,0.1"];
-    software [shape = record, label = "<n1mm> N1MM+\nLogger"]
+    software [shape = record, label = "<hdsdr> HDSDR | <n1mm> N1MM+\nLogger"]
 //    microhamDeviceMapper [label = "Microham Device\nMapper"]
 
     anyDeskControl -> software [penwidth = 0]
@@ -33,7 +33,7 @@ digraph Arch {
     edge [arrowhead = none]
     label = < <b>Controlling PC<br/>(Kenwood)</b> >
 
-    kenwoodSoftware [shape = record, label = "{{<n1mm> N1MM+\nLogger} | {<n1mmRotor>N1MM\nRotor}}"]
+    kenwoodSoftware [shape = record, label = "{<n1mm> N1MM+\nLogger | <n1mmRotor>N1MM\nRotor}"]
     }
 
     subgraph cluster2 {
@@ -43,7 +43,7 @@ digraph Arch {
     label = < <b>Hardware</b> >
 
     controllingHardware [shape = record, fillcolor = lightblue, label = "<ru005> Band\ndecoder\n(RU-005a) | <rotorInterface> Rotor\ninterface"]
-    radioHardware [shape = record, fillcolor = salmon, label = "<trx> Elecraft K3 | <antSwitch> Antenna\nswitch | <rotor> Yaesu\nG1000"]
+    radioHardware [shape = record, fillcolor = salmon, label = "<rsp> RSP1A\nSDR receiver | <trx> Elecraft K3 | <antSwitch> Antenna\nswitch | <rotor> Yaesu\nG1000"]
 
     controllingHardware: ru005 -> radioHardware: antSwitch
     controllingHardware: rotorInterface -> radioHardware: rotor
@@ -54,9 +54,11 @@ digraph Arch {
 
 
     software: n1mm -> radioHardware: trx
+    software: hdsdr -> radioHardware: rsp
     radioHardware:trx -> controllingHardware: ru005
+    radioHardware:trx:s -> radioHardware: rsp: s
 
-    kenwoodSoftware: n1mmRotor -> controllingHardware: rotorInterface
+    kenwoodSoftware: n1mmRotor: e -> controllingHardware: rotorInterface
 
     software: n1mm -> kenwoodSoftware: n1mm
 
