@@ -1,4 +1,4 @@
-# RK5D remote control configuration (Elecraft)
+# RK5D remote control configuration (Kenwood via Microham)
 
 ## Wiring diagram
 ![hardware](gv/hw.png)
