@@ -1,12 +1,14 @@
 # RK5D remote control configuration (Kenwood via Microham)
 
 ## Wiring diagram
-![hardware](gv/hw.png)
+Some details are missing here.
+
+![hardware](images/hw.png)
 
 ### PC and RU005a:
 - LPT to DB15 cable, pinout:
 
-![pinout](gv/lpt-ru005a.png)
+![pinout](images/lpt-ru005a.png)
 
 Shorts between pins 9,10,15 define RU005a "Band data" mode
 

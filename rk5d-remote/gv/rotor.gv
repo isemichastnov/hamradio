@@ -1,0 +1,25 @@
+digraph Arch {
+node [shape = rect, margin = "0.5,0.1"]
+edge [arrowhead = none]
+
+Network [label="Local Area Network", shape = egg, style = filled, fillcolor = azure]
+
+subgraph cluster0 {
+cl [label = "N1MM \"Client\" machine", shape = ellipse, color = salmon]
+client [shape = record,  label = "{{ Logging window | Rotor window} | { <log> \nN1MM Logger\n\n} }"]
+}
+
+subgraph cluster1 {
+sr [label = "N1MM \"Server\" machine", shape = ellipse, color = salmon]
+server [shape=record, label = "{{<serverLog> N1MM Logger | <rotorControl> N1MM Rotor}}"]
+}
+
+Rotor [label = "Antenna\nrotor", shape = record, style = filled]
+
+
+client -> Network
+Network -> server:serverLog
+Network -> server:rotorControl
+
+server:rotorControl -> Rotor
+}

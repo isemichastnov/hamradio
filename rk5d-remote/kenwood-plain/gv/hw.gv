@@ -1,0 +1,29 @@
+digraph Arch {
+node [shape = rect, margin = "0.2,0.1"]
+edge [arrowhead = none]
+labelloc = top
+
+label = <<b>Controlling PC and Hardware connections: <br/>Kenwood working place</b>>
+
+pc [shape = record, style = filled, label = "{ \nControlling PC\n\r | { <usbA>USB Type A | <usbA2> USB Type A} }"]
+headset [shape = record, style = filled, label = "{ Headset with Dynamic Mic\n(for offline use) | <mic> dynamic mic | <earph> headphones }"]
+
+kenwood [shape = record, style = filled, fillcolor = salmon, label = "{ { <earphFront> 6.3mm \nheadphones\n out\n(front panel) | <micFront> 8pin\n mic in\n(front panel) | <usbB>USB Type B:\n\nCAT,\nAudio codec | <key>3.5mm\nKey in\n(CW) | <acc2>ACC2\n13pin\n(PTT) } | \nKenwood TS590\n\r | {<rs232> RS232 } }"];
+cwInterface [shape = record, style = filled, fillcolor = lightblue, label = "{<usb> USB | \nCW Interface\n\n | {<dtr> DTR | <rts> RTS}}"]
+
+ru005 [shape = record, style = filled, fillcolor = lightblue, label = "{<db15> DB15 | \nBand Decoder (RU005a)\n\r | <db9>DB9 }"]
+
+antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "{ <db9>DB9 | \n Antenna switch \n\r }"]
+
+pc : usbA -> kenwood : usbB
+pc : usbA2 : s -> cwInterface : usb:n
+cwInterface : dtr : s -> kenwood : key : n
+cwInterface : rts : s -> kenwood : acc2 : n
+kenwood : rs232 -> ru005 : db15 : n
+
+headset : mic : e -> kenwood : micFront : n
+headset : earph : s -> kenwood : earphFront : n
+
+ru005 : db9 -> antennaSwitch : db9
+
+}

@@ -1,17 +1,19 @@
 # RK5D remote control configuration
 
 ## 0. Let me in
-1. Install [AnyDesk](https://anydesk.com)
-2. Ask me for setting up your access
-3. Please read this doc carefully to be aware of usage procedures, limitations and **your** responsibilities
+1. Install [AnyDesk](https://anydesk.com) and [Discord](https://discord.com/)
+2. Register in Discord
+3. Ask me for setting up your access
+4. Please read this doc carefully to be aware of usage procedures, limitations and **your** responsibilities
 
 
 ## 1. Starting the station
-We have two working places: one with a TS590 and another with a K3. Their setup is a bit different so please read through the corresponding manual.
-Common things are discussed later in this doc.
-
-- [TS590](./kenwood/README.md)
+We have three working places:
+- [TS590 controlled by a Microham](./kenwood-via-microham/README.md) - planned for WARC bands
+- [TS590](./kenwood-plain/README.md)
 - [K3](./elecraft/README.md)
+
+Common things are discussed later in this doc. However working places setup is a bit different so please read through the corresponding manual.
 
 ## 2. Controlling the station: common
 So you're in and from now on you're controlling the station. Please do not forget that all the hardware depends on your actions.
@@ -26,18 +28,30 @@ So you're in and from now on you're controlling the station. Please do not forge
    The rotator always starts the rotation via the shortest (<180 degrees) path within its full 450 degrees range - but that's more than we want.
 ##### Once you're done - please return the antenna to 270º
 4. **TRANSCEIVER CONTROL**: Control transceiver functions using the buttons configured in the N1MM bandmap window.
+   The buttons are different for each transceiver.
     - Pay special attention to RIT and XIT indicators below the transceiver frequency. Once they're toggled - they're red.
-    - Unfortunately we don't have indicators for most of the functions controlled by these buttons, but we're planning to install a camera in front of the transceiver to see the display.
-    - For now - just listen the the transceiver beeps when you click the buttons - the beep frequency is high when a function is enabled and low when a function is disabled. Try it and you'll understand.
+    - Unfortunately we don't have indicators for most of the functions controlled by these buttons.
+    - For now - just listen the the transceiver beeps when you click the buttons.
     - All buttons within the grid is something we **can** customize so please don't be shy to provide your feedback - if you lack some button there or find something unneeded.
 5. **N1MM+ FAQ**:
     - There is a [GREAT manual](https://n1mmwp.hamdocs.com/), split by sections, don't be shy to read it.
-    - Read about the **ESM (Enter Sends Message)** mode, it will clarify the most of questions on why and what the log sends when you click some buttons: [ESM Mode](https://n1mmwp.hamdocs.com/setup/keyboard-shortcuts/#enter-sends-message-mode-esm)
+    - Read about the **ESM (Enter Sends Message)** mode, it will clarify the most of questions on why and what the log sends when you click some buttons and why and which buttons are yellow: [ESM Mode](https://n1mmwp.hamdocs.com/setup/keyboard-shortcuts/#enter-sends-message-mode-esm)
     - **Ctrl+K** combination toggles CW free text send window, don't be afraid of using it. I bet you type much more faster than the CW speed you use. **Esc** closes it.
     - **Esc** halts sending at any moment
    
 ## 3. Software responsibilities
-Unique to each working place - see [TS590](./kenwood/README.md), [K3](./elecraft/README.md)
+The common principle in our setup is that all the controlling software is kept at the controlling PC. 
+"Controlling" software refers to logger, antenna rotor control, any other software which **controls** station hardware.
+User PC just connects to the controlling PC via **AnyDesk** - for remote desktop control and **Discord** - for two-way sound transmission over the Internet.
+
+![software](images/sw.png)
+
+Further details are unique to each working place, see detailed per-working-place docs.
 
 ## 4. Hardware connections
-Unique to each working place - see [TS590](./kenwood/README.md), [K3](./elecraft/README.md)
+Detailed connection diagrams are unique to each working place - see corresponding docs.
+
+But have just one antenna rotator - which is obviously connected just to one controlling PC.
+However it can be controlled from any other machine via the N1MM Logger.
+
+![rotor](images/rotor.png)

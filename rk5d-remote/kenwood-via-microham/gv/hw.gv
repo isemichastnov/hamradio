@@ -3,7 +3,7 @@ digraph Arch {
     edge [arrowhead = none]
     labelloc = top
 
-    label = <<b>Controlling PC and Hardware connections: Kenwood working place</b>>
+    label = <<b>Controlling PC and Hardware connections: Kenwood-microham working place</b>>
 
     pc [shape = record, style = filled, label = "{ \nControlling PC\n\r | { <usbA>USB Type A |  <lpt>LPT | <com>COM } }"]
 

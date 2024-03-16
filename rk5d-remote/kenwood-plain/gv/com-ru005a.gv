@@ -1,0 +1,12 @@
+digraph {
+rs232 [shape = record, label = "{TS590 RS232 pins | { <2>TXD\n2 | <3>RXD\n3| <7>RTS\n7 | <5>GND\n5 }}"]
+
+db15 [shape = record, label = "{{ <7>RX\n7 |<8>TX\n8 | <2>RTS\n2 | <9>9 | <15>15\nGND } | RU005a DB15 pins}"]
+
+rs232 : 5 : s -> db15 : 15 : n [arrowhead = none]
+db15 : 8 : n -> rs232 : 3: s
+rs232 : 2 : s -> db15 : 7 : n
+rs232 : 7 : s -> db15 : 2 : n [arrowhead = none]
+
+db15 : 9 : s -> db15: 15 : e [arrowhead = none]
+}

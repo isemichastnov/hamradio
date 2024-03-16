@@ -1,0 +1,32 @@
+digraph Arch {
+    node [shape = rect, margin = "0.5,0.1"]
+    edge [arrowhead = none]
+
+    Internet [shape = egg, style = filled, fillcolor = azure]
+
+    subgraph cluster0 {
+    user [label = "User site", color = salmon, shape = ellipse]
+    remote [shape = record, label = "{\nRemote user PC software\n\n | { <anydesk> AnyDesk | <discord> Discord }}"]
+    }
+
+    subgraph cluster1 {
+    edge [arrowhead = none]
+    labelloc = top
+    rk5d [label = "RK5D site", color = salmon, shape = ellipse]
+
+    controlling [shape = record, label = "{{ <anydesk> AnyDesk | <discord> Discord } | \nControlling PC software\n\n | {<n1mm>N1MM | <rotor>N1MM Rotor | <etc>...}}"]
+
+    TRX[shape=record, style=filled]
+    Rotor[label = "Antenna\nrotor", shape=record, style=filled]
+    etc[label="Other\nhardware", shape=record, style=filled]
+
+    controlling: n1mm -> TRX
+    controlling: rotor -> Rotor
+    controlling: etc -> etc
+    }
+
+    remote: anydesk -> Internet
+    remote: discord -> Internet
+    Internet -> controlling: anydesk
+    Internet -> controlling: discord
+}

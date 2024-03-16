@@ -3,7 +3,7 @@ node [style = filled, shape = rect, margin = "0.5,0.1"]
 edge [arrowhead = none]
 
 labelloc = top
-label = <<b>Elecraft working place setup</b>>
+label = <<b>Kenwood working place setup</b>>
 
 subgraph cluster1 {
 color = white
@@ -12,7 +12,7 @@ node [style = filled, shape = rect, margin = "0.5,0.1"]
 edge [arrowhead = none]
 label = Software
 
-software [shape = record, label = "<hdsdr> HDSDR | <n1mm> N1MM+\nLogger (client)"]
+software [shape = record, label = "<n1mm> N1MM+\nLogger (client)"]
 }
 
 subgraph cluster2 {
@@ -23,13 +23,11 @@ labeljust = l
 label = Hardware
 
 controllingHardware [shape = record, fillcolor = lightblue, label = "<ru005> Band\ndecoder\n(RU-005a)"]
-radioHardware [shape = record, fillcolor = salmon, label = "<rsp> RSP1A\nSDR receiver | <trx> Elecraft K3 | <antSwitch> Antenna\nswitch"]
+radioHardware [shape = record, fillcolor = salmon, label = "<trx> Kenwood TS590 | <antSwitch> Antenna\nswitch"]
 
 controllingHardware : ru005 -> radioHardware : antSwitch
 }
 
 software : n1mm -> radioHardware : trx
-software : hdsdr -> radioHardware : rsp
 radioHardware : trx -> controllingHardware : ru005
-radioHardware : trx : s -> radioHardware : rsp : s
 }
