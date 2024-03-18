@@ -23,12 +23,12 @@ If everything is ok, you should
 
 *Kenwood bandmap window (other buttons are possible)*
 
-![bandmap](bandmap.png)
+![bandmap](images/bandmap.png)
 
 
 *N1MM rotor window*
 
-![bandmap](n1mm-rotor-window.png)
+![bandmap](images/n1mm-rotor-window.png)
 
 Congrats You're ready! Please don't give up and read the next section carefully in order not to harm the station.
 
@@ -36,12 +36,12 @@ Congrats You're ready! Please don't give up and read the next section carefully 
 Nothing special for this setup. Common things are described in the [base manual](../README.md).
 
 ## 3. Software responsibilities: Kenwood
-![software](gv/sw.png)
+![software](images/sw.png)
 
 G1000's rotor is controlled by N1MM Logger via the Server (Kenwood-Microham) PC, the rest should be clear from the diagram.
 
 ## 4. Hardware connections: Kenwood
-![hardware](gv/hw.png)
+![hardware](images/hw.png)
 
 ## 5. Detailed setup
 See [SETUP.md](SETUP.md)
