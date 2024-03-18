@@ -13,7 +13,7 @@ rsp [shape = record, style = filled, fillcolor = salmon, label = "{{<usb>USB Typ
 
 ru005 [shape = record, style = filled, fillcolor = lightblue, label = "{<db15> DB15 | \nBand Decoder (RU005a)\n\r | <db9>DB9 }"]
 
-antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "{ <db9>DB9 | \n Antenna switch \n\r }"]
+antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "\n Antenna switch \n\r"]
 
 pc : usbA -> elecraft : com
 pc : usbA2 -> rsp : usb : n
@@ -25,6 +25,6 @@ elecraft : ifout : s -> rsp : ant : w
 headset : mic : e -> elecraft : micBack
 headset : earph : s -> elecraft : earphBack
 
-ru005 : db9 -> antennaSwitch : db9
+ru005 : db9 -> antennaSwitch
 
 }

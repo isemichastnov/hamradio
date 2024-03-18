@@ -13,7 +13,7 @@ cwInterface [shape = record, style = filled, fillcolor = lightblue, label = "{<u
 
 ru005 [shape = record, style = filled, fillcolor = lightblue, label = "{<db15> DB15 | \nBand Decoder (RU005a)\n\r | <db9>DB9 }"]
 
-antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "{ <db9>DB9 | \n Antenna switch \n\r }"]
+antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "\n Antenna switch \n\r "]
 
 pc : usbA -> kenwood : usbB
 pc : usbA2 : s -> cwInterface : usb:n
@@ -24,6 +24,6 @@ kenwood : db9 -> ru005 : db15 : n
 headset : mic : e -> kenwood : micFront : n
 headset : earph : s -> kenwood : earphFront : n
 
-ru005 : db9 -> antennaSwitch : db9
+ru005 : db9 -> antennaSwitch
 
 }

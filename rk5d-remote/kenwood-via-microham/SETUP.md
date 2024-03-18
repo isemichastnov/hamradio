@@ -3,6 +3,8 @@
 ## Wiring diagram
 Some details are missing here.
 
+This place is going to be reconfigured for use with WARC bands only - hence external antenna switch will not be used. RU005 will also be removed from this working place.
+
 ![hardware](images/hw.png)
 
 ### PC and RU005a:

@@ -15,7 +15,7 @@ digraph Arch {
 
     kenwood [shape = record, style = filled, fillcolor = salmon, label = "{ { <com>COM:\nCAT | <acc2>ACC2:\naudio | <mic>8pin Mic:\nPTT | <smth> smth else? }  | \nKenwood TS-590S\n\r }"];
 
-    antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "{ <db9>DB9 | \n Antenna switch \n\r }"]
+    antennaSwitch [shape = record, style = filled, fillcolor = salmon, label = "\n Antenna switch \n\r"]
 
     rotor [shape = record, style = filled, fillcolor = salmon, label = "{ <input>DB9 | \n Antenna rotator\ncontroller \n\r }"]
 
@@ -28,7 +28,7 @@ digraph Arch {
     microham: smth -> kenwood: acc2 //TODO check if there's smth else not just audio
     microham: smth2 -> kenwood: mic //TODO
     microham: smth3 -> kenwood: smth //TODO
-    ru005: db9 -> antennaSwitch: db9
+    ru005: db9 -> antennaSwitch
     rotorController:output -> rotor:input
 
 
