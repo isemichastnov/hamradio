@@ -16,7 +16,8 @@
 
 ![pinout](images/acc-ru005a.png)
 
-Shorts between pins 9,10,15 define RU005a "Band data" mode
+Shorts between pins 9,10,15 define RU005a "Band data" mode.
+This mode is identified by 2nd LED flashing once on RU005a startup.
 
 ### Elecraft to RSP1A:
 - BNC male to SMA male cable: connected to IF OUT on K3 rear panel and ANT on RSP

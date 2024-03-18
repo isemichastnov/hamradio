@@ -43,4 +43,4 @@ Notes from TS590 manual regarding PTT/Audio control:
 ![pinout](images/com-ru005a.png)
 
 Shorts between pins 9 and 15 define RU005a "Kenwood" mode.
-This mode is identified by 4th LED flashing once on RO005a startup. 
+This mode is identified by 4th LED flashing once on RU005a startup. 

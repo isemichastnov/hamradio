@@ -13,5 +13,6 @@ This place is going to be reconfigured for use with WARC bands only - hence exte
 ![pinout](images/lpt-ru005a.png)
 
 Shorts between pins 9,10,15 define RU005a "Band data" mode
+This mode is identified by 2nd LED flashing once on RU005a startup.
 
 Pins 18-25 on the LPT side are shorted
