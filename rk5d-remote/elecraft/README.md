@@ -14,7 +14,7 @@
 - **N1MM+ Logger** (*C:\Program Files (x86)\N1MM Logger+\N1MMLogger.net.exe*)
 - **Discord**
 6. Start the transceiver by clicking the **ON** button in N1MM's bandmap window. Before clicking the "ON" button, click the large red "Reset radio" button if it is present.
-7. Enter RK5D Discord Server and K3 chat in Discord
+7. Enter RK5D Discord Server and ```K3``` channel in Discord
 
 If everything is ok, you should
 - See the transceiver frequency in the bandmap window

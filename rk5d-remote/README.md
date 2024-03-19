@@ -44,6 +44,10 @@ The common principle in our setup is that all the controlling software is kept a
 "Controlling" software refers to logger, antenna rotor control, any other software which **controls** station hardware.
 User PC just connects to the controlling PC via **AnyDesk** - for remote desktop control and **Discord** - for two-way sound transmission over the Internet.
 
+Current setup (namely an optical connection at the controlling - i.e. shack - side, and a GPON + WiFi at the client side) provide an acceptable connection speed for usage in both CW and SSB.
+A remote microphone (at user's side) is used for SSB, but no remote CW paddle can be used in current setup - so we use either macros or just type CW from the keyboard.
+
+
 ![software](images/sw.png)
 
 Further details are unique to each working place, see detailed per-working-place docs.

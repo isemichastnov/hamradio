@@ -7,7 +7,9 @@
 - **Microham USB Device Router** (*C:\Program Files (x86)\microHAM\bin\urouter.exe*)
 - **N1MM+ Logger** (*C:\Program Files (x86)\N1MM Logger+\N1MMLogger.net.exe*)
 - **N1MM Rotor** will be started with the logger automatically
+- **Discord**
 4. Start the transceiver by clicking the **ON** button in N1MM's bandmap window. Before clicking the "ON" button, click the large red "Reset radio" button if it is present.
+5. Enter RK5D Discord Server and ```Kenwood-microham``` chat in Discord
 
 If everything is ok, you should
 - See the transceiver frequency in the bandmap window
@@ -36,10 +38,8 @@ Common things are described in the [base manual](../README.md).
 ## 3. Software responsibilities: kenwood-microham
 ![software](images/sw.png)
 
-### Overview
-Remote user connects to the controlling PC via free AnyDesk software - which provides full remote desktop control and sound streaming. Sound quality may be question for improvement, however current setup (namely an optical connection at the controlling - i.e. shack - side, and a GPON + WiFi at the client side) normally provide an acceptable connection speed for usage in both CW and SSB, given recorded messages are played back at the controlled PC for SSB. There was no need for connecting a remote microphone for us, however that's a point for further investigation.
-
-Using the remote desktop approach instead of configuring each piece of software for network access provides more flexibility - as all the controlling software is used local mode, no limitations caused by usage over network are applied and all the network configuration changes - if any - have to be applied just to AnyDesk configuration rather than to all software as it would have been should we configure each application for remote usage individually. Moreover, any software not supporting network control may be used.
+Since Microham is used at this place, additional "Microham device mapper" software has to be used.
+It brings unneccessary complexity to the setup bringing no advantages compared to direct com/usb/audio transceiver connection, but we agreed to keep this place as is for now.
 
 ## 4. Hardware connections: kenwood-microham
 More detailed connections diagram 
